@@ -21,23 +21,27 @@ A **real-time encrypted chat application** built with **MERN + Socket.IO** to en
 
 ## ⚙️ How It Works (Simple Workflow)  
 
-### 1️⃣ **User Authentication**  
-- **Sender & Receiver** log in with predefined credentials.  
+### 1️⃣ **Key Generation**  
+- The **server generates an encryption key** for **Custom Cipher encryption**.  
+- This key is structured as:  
+  - **Chars Array** → Example: `ABCD`  
+  - **Key Array** → Example: `PORS`  
+- Before sending, the key is **AES encrypted** also and then shared with both users.  
 
-### 2️⃣ **Encryption & Message Transmission**  
-- The sender types a message → **Encrypted using a custom cipher**.  
-- The **encrypted message** is further **AES encrypted**.  
-- Sent via **Socket.IO** to the receiver.  
+### 2️⃣ **User 1 (Sender) - Sending a Message**  
+- The sender types a message → **Encrypted using the custom cipher**.  
+- Example: `"HELLO"` converts into a scrambled form like `</t:0`.  
+- This result is then **AES encrypted**, turning into something like `"U2F2n+Jv03ay"`.  
+- The AES-encrypted message is sent to the **Socket.IO server**.  
 
-### 3️⃣ **Receiving & Decryption**  
-- The receiver **sees the encrypted message** first.  
-- Clicking **"Decrypt"** performs **AES decryption first**.  
-- Then, the **custom cipher decrypts it back** to the original message.  
+### 3️⃣ **Role of Server**  
+- The server **decrypts only the AES encryption** but does not revert the cipher changes.  
+- At this point, the message appears as suppose `</t:0` (which is not yet the original message).  
+- The server **re-encrypts the message using AES** and broadcasts it to **User 2 (Receiver)**.  
 
-### 4️⃣ **Real-time Communication**  
-- Both **sender & receiver** can **send and receive encrypted messages simultaneously**.  
+### 4️⃣ **User 2 (Receiver) - Receiving & Decryption**  
+- The receiver gets the **AES-encrypted and ciphered message**.  
+- First, **AES decryption** is applied to get `</t:0` from `"U2F2n+Jv03ay"`.  
+- Then, **custom cipher decryption** restores the original message → `"HELLO"`.  
 
-
-[securechat project workflow](https://github.com/user-attachments/assets/549f5b72-2d2c-4a9f-8df5-41eb3a284dfa)
-72c)
 
