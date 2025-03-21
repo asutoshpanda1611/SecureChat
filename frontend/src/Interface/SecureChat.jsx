@@ -15,7 +15,7 @@ const aesDecrypt = (ciphertext) => {
     return JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
 };
 
-const socket = io("http://localhost:5000", { transports: ["websocket"] });
+const socket = io(import.meta.env.VITE_BACKEND_URL, { transports: ["websocket"] });
 
 const SecureChat = ({ username }) => {
     const [message, setMessage] = useState("");

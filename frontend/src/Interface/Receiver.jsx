@@ -1,2 +1,2 @@
 import SecureChat from './SecureChat';
-export default () => <SecureChat username="Precious" />;
+export default () => <SecureChat username="Asutosh" />;
