@@ -36,3 +36,8 @@ A **real-time encrypted chat application** built with **MERN + Socket.IO** to en
 
 ### 4️⃣ **Real-time Communication**  
 - Both **sender & receiver** can **send and receive encrypted messages simultaneously**.  
+
+
+[securechat project workflow](https://github.com/user-attachments/assets/549f5b72-2d2c-4a9f-8df5-41eb3a284dfa)
+72c)
+
