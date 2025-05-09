@@ -42,7 +42,7 @@ A **real-time encrypted chat application** built with **MERN + Socket.IO** to en
 ### 4️⃣ **User 2 (Receiver) - Receiving & Decryption**  
 - The receiver gets the **AES-encrypted and ciphered message**.  
 - First, **AES decryption** is applied to get `</t:0` from `"U2F2n+Jv03ay"`.  
-- Then, **custom cipher decryption** restores the original message → `"HELLO"`.  
+- Then, **custom cipher decryption** restores the original message → `"HELLO"`.   
 
 
 ### Account Login
@@ -50,4 +50,4 @@ A **real-time encrypted chat application** built with **MERN + Socket.IO** to en
         username: asutosh , password: 1234567890
 - on other side :
         username: panda , password: 1234567890
-please refresh the page once you log in
+- please refresh the page once you log in
