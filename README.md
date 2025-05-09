@@ -45,3 +45,9 @@ A **real-time encrypted chat application** built with **MERN + Socket.IO** to en
 - Then, **custom cipher decryption** restores the original message → `"HELLO"`.  
 
 
+### Account Login
+- on one side :
+        username: asutosh , password: 1234567890
+- on other side :
+        username: panda , password: 1234567890
+please refresh the page once you log in
